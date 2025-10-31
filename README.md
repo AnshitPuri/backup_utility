@@ -1,11 +1,5 @@
-Perfect 👍 — since we upgraded your backup utility script with features like compression, restore, settings, and notifications,
-your **README** should also reflect those enhancements.
 
-Here’s a **modern, updated README.md** for your new version — written cleanly with good formatting and visuals 👇
 
----
-
-````markdown
 # 🗂️ Enhanced Backup Utility (TUI)
 
 A simple yet powerful **terminal-based backup tool** for Linux, WSL, and Git Bash.  
