@@ -65,7 +65,7 @@ Run the script:
 
 ---
 
-## Screenshots *(Optional)*
+## Screenshots 
 
 **Backup Menu**
 ![Backup Menu](assets/ss1.png)
@@ -74,8 +74,6 @@ Run the script:
 ![Backup Process](assets/ss2.png)
 
 ---
-
-## License
 
 MIT License – open source.
 
