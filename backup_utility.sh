@@ -61,21 +61,27 @@ perform_backup() {
   fi
 
   notify-send "Backup Completed" "Backup of $(basename "$SRC") finished successfully!" 2>/dev/null || true
-  msg "✅ Backup completed!\nSaved to: ${COMPRESS:+$TAR_FILE}${COMPRESS:no → $DEST_DIR}"
+
+  if [[ "$COMPRESS" == "yes" ]]; then
+    msg "✅ Backup completed!\nSaved to: $TAR_FILE"
+  else
+    msg "✅ Backup completed!\nSaved to: $DEST_DIR"
+  fi
+
   log "Backup complete."
 }
 
 restore_backup() {
-  BACKUP_FILE=$(find "$BACKUP_ROOT" -maxdepth 1 -type f -name "*.tar.gz" -o -type d | sort -r)
-  if [ -z "$BACKUP_FILE" ]; then
+  BACKUP_FILE_LIST=$(find "$BACKUP_ROOT" -maxdepth 1 -type f -name "*.tar.gz" -o -type d | sort -r)
+  if [ -z "$BACKUP_FILE_LIST" ]; then
     msg "No backups found."
     return
   fi
 
-  BACKUP_LIST=$(printf "%s\n" $BACKUP_FILE | awk '{printf "%d %s\n", NR, $0}')
+  BACKUP_LIST=$(printf "%s\n" $BACKUP_FILE_LIST | awk '{printf "%d %s\n", NR, $0}')
   SELECTED=$(whiptail --title "Restore Backup" --menu "Choose backup to restore:" 20 70 10 $BACKUP_LIST 3>&1 1>&2 2>&3) || return
 
-  TARGET=$(echo "$BACKUP_FILE" | sed -n "${SELECTED}p")
+  TARGET=$(echo "$BACKUP_FILE_LIST" | sed -n "${SELECTED}p")
   RESTORE_DIR=$(whiptail --inputbox "Enter destination path to restore:" 10 70 "$HOME/restore" 3>&1 1>&2 2>&3) || return
 
   mkdir -p "$RESTORE_DIR"
