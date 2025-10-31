@@ -23,9 +23,10 @@ Built with `whiptail` for a friendly text-based UI — ideal for quick, reliable
 
 1. Clone or copy the script to your local machine.  
 2. Make it executable:
+
    ```bash
    chmod +x backup_utility.sh
-````
+
 
 3. Install dependencies (if missing):
 
