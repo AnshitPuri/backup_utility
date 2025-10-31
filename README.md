@@ -1,14 +1,84 @@
-# backup_utility
 
+
+
+# Backup Utility with Terminal UI
+
+A simple terminal-based **backup tool** for Linux/WSL/Git Bash.  
+It allows you to **back up directories**, **view backups**, and **check logs** easily.
 
 ---
 
-💡 **Tip:**  
-- You can **take a screenshot** of your terminal menu running and add it under the “Screenshots” section.  
-- This README is **ready for GitHub submission** and will make your project look polished.  
+## Features
+- Backup any folder with automatic timestamped naming.  
+- View your backup folder from the menu.  
+- View logs of all backups.  
+- Uses `rsync` for reliable copying.  
+- Terminal menu interface using `whiptail`.  
 
 ---
 
-If you want, I can **also write a super short version** for submission that fits nicely in one page, perfect for your Unix project report.  
+## Installation
+1. Go to the project folder where the script is saved.  
+2. Make the script executable:  
+```bash
+chmod +x backup_utility.sh
+````
 
-Do you want me to do that?
+3. Install dependencies (if missing):
+
+```bash
+sudo apt install whiptail rsync
+```
+
+---
+
+## Usage
+
+Run the script:
+
+```bash
+./backup_utility.sh
+```
+
+**Menu options:**
+
+1. **Start Backup** – Enter the full path of the folder to back up.
+2. **View Backup Folder** – Open the backup directory.
+3. **View Logs** – See details of all backup operations.
+4. **Exit** – Close the utility.
+
+---
+
+## Backup & Log Locations
+
+* **Backups:** `~/backup/`
+* **Logs:** `~/.backup_logs/`
+
+---
+
+## Requirements
+
+* Linux / WSL / macOS
+* `bash`
+* `whiptail`
+* `rsync`
+
+---
+
+## Screenshots *(Optional)*
+
+**Backup Menu**
+![Backup Menu](assets/ss1.png)
+
+**Backup Process**
+![Backup Process](assets/ss2.png)
+
+---
+
+## License
+
+MIT License – open source.
+
+```
+
+
