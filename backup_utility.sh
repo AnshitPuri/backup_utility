@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Enhanced Backup Utility with TUI and Extra Features
-# Author: Edited by Ayush Rana & Anshit Puri 😉
 
 set -euo pipefail
 
