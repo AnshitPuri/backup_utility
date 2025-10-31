@@ -1,77 +1,115 @@
+Perfect 👍 — since we upgraded your backup utility script with features like compression, restore, settings, and notifications,
+your **README** should also reflect those enhancements.
 
-
-
-# Backup Utility with Terminal UI
-
-A simple terminal-based **backup tool** for Linux/WSL/Git Bash.  
-It allows you to **back up directories**, **view backups**, and **check logs** easily.
+Here’s a **modern, updated README.md** for your new version — written cleanly with good formatting and visuals 👇
 
 ---
 
-## Features
-- Backup any folder with automatic timestamped naming.  
-- View your backup folder from the menu.  
-- View logs of all backups.  
-- Uses `rsync` for reliable copying.  
-- Terminal menu interface using `whiptail`.  
+````markdown
+# 🗂️ Enhanced Backup Utility (TUI)
+
+A simple yet powerful **terminal-based backup tool** for Linux, WSL, and Git Bash.  
+Built with `whiptail` for a friendly text-based UI — ideal for quick, reliable backups from your terminal.
 
 ---
 
-## Installation
-1. Go to the project folder where the script is saved.  
-2. Make the script executable:  
-```bash
-chmod +x backup_utility.sh
+## 🚀 Features
+
+✅ **Backup any directory** with automatic timestamp naming  
+✅ **Optional compression** (`.tar.gz`) for space-saving backups  
+✅ **Restore backups** easily to any folder  
+✅ **Persistent settings** saved in `~/.backup_config`  
+✅ **View backup logs** in an interactive terminal viewer  
+✅ **Desktop notifications** (if `notify-send` is available)  
+✅ **Clean TUI menu** using `whiptail`  
+
+---
+
+## 📦 Installation
+
+1. Clone or copy the script to your local machine.  
+2. Make it executable:
+   ```bash
+   chmod +x backup_utility.sh
 ````
 
 3. Install dependencies (if missing):
 
-```bash
-sudo apt install whiptail rsync
-```
+   ```bash
+   sudo apt install whiptail rsync tar
+   ```
+
+   *(Optional)* For desktop notifications:
+
+   ```bash
+   sudo apt install libnotify-bin
+   ```
 
 ---
 
-## Usage
+## 🧰 Usage
 
-Run the script:
+Run the tool:
 
 ```bash
 ./backup_utility.sh
 ```
 
-**Menu options:**
+Then navigate using arrow keys and **Enter**:
 
-1. **Start Backup** – Enter the full path of the folder to back up.
-2. **View Backup Folder** – Open the backup directory.
-3. **View Logs** – See details of all backup operations.
-4. **Exit** – Close the utility.
-
----
-
-## Backup & Log Locations
-
-* **Backups:** `~/backup/`
-* **Logs:** `~/.backup_logs/`
+| Menu Option               | Description                                                 |
+| ------------------------- | ----------------------------------------------------------- |
+| 🧾 **Start Backup**       | Choose any folder to back up.                               |
+| 🔄 **Restore Backup**     | Restore from existing backups (folders or `.tar.gz` files). |
+| 📁 **View Backup Folder** | Open your `~/backup/` directory in the file explorer.       |
+| 🧩 **View Logs**          | Read logs of previous backup operations.                    |
+| ⚙️ **Change Settings**    | Toggle compression and other preferences.                   |
+| ❌ **Exit**                | Close the utility.                                          |
 
 ---
 
-## Requirements
+## 📂 Default Locations
 
-* Linux / WSL / macOS
-* `bash`
-* `whiptail`
-* `rsync`
+| Type           | Path               |
+| -------------- | ------------------ |
+| 🔹 **Backups** | `~/backup/`        |
+| 🔹 **Logs**    | `~/.backup_logs/`  |
+| 🔹 **Config**  | `~/.backup_config` |
 
 ---
 
-## Screenshots 
+## ⚙️ Configuration
 
-**Backup Menu**
+You can manually edit `~/.backup_config` to set preferences:
+
+```bash
+COMPRESS=yes   # or 'no'
+```
+
+---
+
+## 🖼️ Screenshots
+
+**Main Menu**
 ![Backup Menu](assets/ss1.png)
 
-**Backup Process**
+**Backup Progress**
 ![Backup Process](assets/ss2.png)
+
 
 ---
 
+## 🧩 Tech Used
+
+* **Bash** — main scripting language
+* **Whiptail** — terminal UI dialogs
+* **Rsync** — reliable and fast file copy
+* **Tar** — compression support
+* **Libnotify** — optional notifications
+
+
+---
+
+## 📜 License
+
+This project is open-source and available under the **MIT License**.
