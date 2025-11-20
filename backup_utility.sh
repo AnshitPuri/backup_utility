@@ -1,23 +1,16 @@
-#!/usr/bin/env bash
-# Enhanced Backup Utility with TUI and Extra Features
-
 set -euo pipefail
 
-# === CONFIG ===
 BACKUP_ROOT="${HOME}/backup"
 LOG_DIR="${HOME}/.backup_logs"
 CONFIG_FILE="${HOME}/.backup_config"
 mkdir -p "$BACKUP_ROOT" "$LOG_DIR"
 
-# === LOGGING ===
 log_file="$LOG_DIR/backup-$(date +%Y-%m-%d).log"
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$log_file"; }
 
-# === MESSAGE HELPERS ===
 msg() { whiptail --title "📦 Backup Utility" --msgbox "$*" 12 70; }
 confirm() { whiptail --yesno "$1" 10 70; }
 
-# === SETTINGS ===
 load_settings() {
   if [[ -f "$CONFIG_FILE" ]]; then
     source "$CONFIG_FILE"
@@ -31,7 +24,6 @@ save_settings() {
   echo "COMPRESS=$COMPRESS" > "$CONFIG_FILE"
 }
 
-# === MAIN FUNCTIONS ===
 
 perform_backup() {
   SRC=$(whiptail --inputbox "Enter full path of directory to back up:" 10 70 3>&1 1>&2 2>&3) || return
@@ -120,7 +112,6 @@ change_settings() {
   msg "Settings updated successfully!"
 }
 
-# === MAIN MENU ===
 load_settings
 
 while true; do
