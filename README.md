@@ -1,6 +1,6 @@
 
 
-# 🗂️ Enhanced Backup Utility (TUI)
+# 🗂️ Enhanced Backup Utility 
 
 A simple yet powerful **terminal-based backup tool** for Linux, WSL, and Git Bash.  
 Built with `whiptail` for a friendly text-based UI — ideal for quick, reliable backups from your terminal.
