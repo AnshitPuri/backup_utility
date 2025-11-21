@@ -14,7 +14,6 @@ Built with `whiptail` for a friendly text-based UI — ideal for quick, reliable
 ✅ **Restore backups** easily to any folder  
 ✅ **Persistent settings** saved in `~/.backup_config`  
 ✅ **View backup logs** in an interactive terminal viewer  
-✅ **Desktop notifications** (if `notify-send` is available)  
 ✅ **Clean TUI menu** using `whiptail`  
 
 ---
@@ -34,11 +33,6 @@ Built with `whiptail` for a friendly text-based UI — ideal for quick, reliable
    sudo apt install whiptail rsync tar
    ```
 
-   *(Optional)* For desktop notifications:
-
-   ```bash
-   sudo apt install libnotify-bin
-   ```
 
 ---
 
@@ -100,7 +94,7 @@ COMPRESS=yes   # or 'no'
 * **Whiptail** — terminal UI dialogs
 * **Rsync** — reliable and fast file copy
 * **Tar** — compression support
-* **Libnotify** — optional notifications
+
 
 
 ---
